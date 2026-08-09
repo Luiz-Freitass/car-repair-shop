@@ -6,17 +6,18 @@ namespace Car_Repair_Shop.Models
 {
     public class WorkOrder
     {
-        public WorkOrder(int number, Client client, Vehicle vehicle, Mechanic mechanic, string problemDescription, string service, DateTime entryDate)
+        public WorkOrder(int number, int clientId, int vehicleId, int mechanicId, string problemDescription, string service, DateTime entryDate)
         {
             Number = number;
-            Client = client;
-            Vehicle = vehicle;
-            Mechanic = mechanic;
+            ClientId = clientId;
+            VehicleId = vehicleId;
+            MechanicId = mechanicId;
             ProblemDescription = problemDescription;
             Service = service;
             EntryDate = entryDate;
         }
 
+        public int Id { get; set; }
         public int Number { get; set; }
         public int ClientId { get; set; }
         public Client Client { get; set; }
@@ -30,6 +31,6 @@ namespace Car_Repair_Shop.Models
         public DateTime? DepartureDate { get; set; }
         public double Value { get; set; }
         public WorkOrderStatus Status { get; set; }
-        public List<WorkOrderPiece> Pieces { get; set; }
+        public ICollection<WorkOrderPiece> Pieces { get; set; } = new HashSet<WorkOrderPiece>();
     }
 }
