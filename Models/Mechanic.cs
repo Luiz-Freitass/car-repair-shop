@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Car_Repair_Shop.Models
@@ -14,9 +15,9 @@ namespace Car_Repair_Shop.Models
         }
 
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Specialty { get; set; }
-        public string Contact { get; set; }
+        public required string Name { get; set; }
+        public required string Specialty { get; set; }
+        public required string Contact { get; set; }
         public ICollection<WorkOrder> WorkOrders { get; set; } = new HashSet<WorkOrder>();
     }
 }

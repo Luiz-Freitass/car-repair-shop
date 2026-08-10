@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Car_Repair_Shop.Models
@@ -15,15 +16,16 @@ namespace Car_Repair_Shop.Models
             Color = color;
             ClientId = clientId;
         }
-
+        
         public int Id { get; set; }
-        public string Plate { get; set; }
-        public string Model { get; set; }
-        public string Mark { get; set; }
+        public required string Plate { get; set; }
+        public required string Model { get; set; }
+
+        public required string Mark { get; set; }
         public int Year { get; set; }
-        public string Color { get; set; }
+        public required string Color { get; set; }
         public int ClientId { get; set; }
-        public Client Client { get; set; }
+        public required Client Client { get; set; }
         public ICollection<WorkOrder> WorkOrders { get; set; } = new HashSet<WorkOrder>();
     }
 }
