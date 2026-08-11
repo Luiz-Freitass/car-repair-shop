@@ -19,9 +19,9 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 .AddEntityFrameworkStores<AppDbContext>()
 .AddDefaultTokenProviders();
 
-
+builder.Services.AddAuthentication();
 builder.Services.AddControllers();
-
+builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddCors(options =>
 {
@@ -38,7 +38,6 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 app.UseCors("AllowReactApp"); 
-app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
