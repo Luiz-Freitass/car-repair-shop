@@ -28,7 +28,7 @@ public class VehicleController : ControllerBase
 
         var vehicle = _mapper.Map<Vehicle>(dto);
         _appDbContext.Vehicles.Add(vehicle);
-        _appDbContext.SaveChangesAsync();
+        await _appDbContext.SaveChangesAsync();
 
         await _appDbContext.Entry(vehicle).Reference(v => v.Client).LoadAsync();
 
@@ -40,6 +40,7 @@ public class VehicleController : ControllerBase
     public async Task<IActionResult> GetAllVehicles([FromQuery] int skip = 0, [FromQuery] int take = 20)
     {
         var vehicles = await _appDbContext.Vehicles
+            .Include(v => v.Client)
             .Skip(skip)
             .Take(take)
             .ToListAsync();
@@ -64,7 +65,7 @@ public class VehicleController : ControllerBase
         var vehicle = await _appDbContext.Vehicles.FirstOrDefaultAsync(v => v.Id == id);
         if (vehicle == null) return NotFound();
 
-        var clientExists = await _appDbContext.Vehicles.AnyAsync(c => c.Id == dto.ClientId);
+        var clientExists = await _appDbContext.Clients.AnyAsync(c => c.Id == dto.ClientId);
         if (!clientExists) return NotFound();
 
         _mapper.Map(dto, vehicle);
