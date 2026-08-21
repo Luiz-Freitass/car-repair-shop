@@ -273,17 +273,9 @@ namespace Car_Repair_Shop.Migrations
                     b.Property<int>("QuantityUsed")
                         .HasColumnType("int");
 
-                    b.Property<int?>("WorkOrderPiecePieceId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("WorkOrderPieceWorkOrderId")
-                        .HasColumnType("int");
-
                     b.HasKey("WorkOrderId", "PieceId");
 
                     b.HasIndex("PieceId");
-
-                    b.HasIndex("WorkOrderPieceWorkOrderId", "WorkOrderPiecePieceId");
 
                     b.ToTable("WorkOrderPieces");
                 });
@@ -488,10 +480,6 @@ namespace Car_Repair_Shop.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Car_Repair_Shop.Models.WorkOrderPiece", null)
-                        .WithMany("Pieces")
-                        .HasForeignKey("WorkOrderPieceWorkOrderId", "WorkOrderPiecePieceId");
-
                     b.Navigation("Piece");
 
                     b.Navigation("WorkOrder");
@@ -571,11 +559,6 @@ namespace Car_Repair_Shop.Migrations
                 });
 
             modelBuilder.Entity("Car_Repair_Shop.Models.WorkOrder", b =>
-                {
-                    b.Navigation("Pieces");
-                });
-
-            modelBuilder.Entity("Car_Repair_Shop.Models.WorkOrderPiece", b =>
                 {
                     b.Navigation("Pieces");
                 });
