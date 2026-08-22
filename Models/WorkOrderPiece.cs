@@ -11,5 +11,4 @@ namespace Car_Repair_Shop.Models;
     public int PieceId { get; set; }
     public required Piece Piece { get; set; }
     public int QuantityUsed { get; set; }
-}
-
+    }
