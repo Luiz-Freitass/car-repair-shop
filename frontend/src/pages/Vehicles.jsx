@@ -45,7 +45,7 @@ export default function VehiclesPage() {
       </div>
 
       {clients.length === 0 && !loading && (
-        <div className="card card-pad" style={{ marginBottom: 18, borderColor: 'rgba(245,166,35,0.3)' }}>
+        <div className="card card-pad" style={{ marginBottom: 18, borderColor: 'rgba(59,59,255,0.4)' }}>
           <p style={{ fontSize: 13, color: 'var(--text-dim)' }}>
             Cadastre ao menos um <strong>cliente</strong> antes de adicionar veículos.
           </p>
@@ -172,7 +172,7 @@ function VehicleForm({ initial, clients, onClose, onSaved }) {
   return (
     <Modal
       title={isEdit ? 'Editar veículo' : 'Novo veículo'}
-      icon={<Car size={18} color="var(--amber)" />}
+      icon={<Car size={18} color="var(--brand-hi)" />}
       onClose={onClose}
       footer={
         <>

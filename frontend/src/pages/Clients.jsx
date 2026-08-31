@@ -191,7 +191,7 @@ function ClientForm({ initial, onClose, onSaved }) {
   return (
     <Modal
       title={isEdit ? 'Editar cliente' : 'Novo cliente'}
-      icon={<Users size={18} color="var(--amber)" />}
+      icon={<Users size={18} color="var(--brand-hi)" />}
       onClose={onClose}
       footer={
         <>

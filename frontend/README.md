@@ -1,4 +1,4 @@
-# Oficina · Painel (Front-end React)
+# MecaniX · Painel (Front-end React)
 
 Interface web para a API **Car_Repair_Shop** (.NET). Gerencia clientes, veículos,
 mecânicos, estoque de peças e ordens de serviço, com autenticação JWT.

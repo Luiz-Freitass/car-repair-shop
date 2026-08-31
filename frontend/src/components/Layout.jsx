@@ -38,7 +38,7 @@ export default function Layout() {
 
   const title =
     TITLES[pathname] ||
-    (pathname.startsWith('/ordens/') ? 'Detalhe da ordem' : 'Oficina')
+    (pathname.startsWith('/ordens/') ? 'Detalhe da ordem' : 'MecaniX')
 
   return (
     <div className="app-shell">
@@ -49,7 +49,7 @@ export default function Layout() {
             <Wrench size={22} />
           </div>
           <div className="brand-text">
-            <b>OFICINA</b>
+            <b>MecaniX</b>
             <span>Gestão</span>
           </div>
         </div>

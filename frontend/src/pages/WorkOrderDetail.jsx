@@ -148,7 +148,7 @@ export default function WorkOrderDetail() {
       <div className="toolbar" style={{ alignItems: 'flex-start' }}>
         <div>
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 24 }}>
-            Ordem <span style={{ color: 'var(--amber)' }}>#{order.number}</span>
+            Ordem <span style={{ color: 'var(--brand-hi)' }}>#{order.number}</span>
           </h2>
           <div style={{ color: 'var(--text-faint)', fontSize: 13, marginTop: 4 }}>
             Entrada em {formatDateTime(order.entryDate)}
@@ -166,7 +166,7 @@ export default function WorkOrderDetail() {
           {/* Status flow */}
           <div className="card">
             <div className="card-head">
-              <ClipboardList size={16} color="var(--amber)" />
+              <ClipboardList size={16} color="var(--brand-hi)" />
               <h3>Fluxo de atendimento</h3>
               {savingStatus && <span className="sub">salvando…</span>}
             </div>
@@ -196,7 +196,7 @@ export default function WorkOrderDetail() {
           {/* Editable details */}
           <form className="card" onSubmit={saveDetails}>
             <div className="card-head">
-              <Wrench size={16} color="var(--amber)" />
+              <Wrench size={16} color="var(--brand-hi)" />
               <h3>Diagnóstico & serviço</h3>
             </div>
             <div className="card-pad" style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
@@ -277,7 +277,7 @@ export default function WorkOrderDetail() {
 
           <div className="card">
             <div className="card-head">
-              <CalendarClock size={16} color="var(--amber)" />
+              <CalendarClock size={16} color="var(--brand-hi)" />
               <h3>Resumo financeiro</h3>
             </div>
             <div className="card-pad">
@@ -403,7 +403,7 @@ function PartsPanel({ orderId, pieces, links, pieceById, onChanged }) {
   return (
     <div className="card">
       <div className="card-head">
-        <Package size={16} color="var(--amber)" />
+        <Package size={16} color="var(--brand-hi)" />
         <div style={{ flex: 1 }}>
           <h3>Peças aplicadas</h3>
           <div className="sub">{links.length} item(ns) nesta ordem</div>

@@ -83,7 +83,7 @@ export default function WorkOrdersPage() {
       </div>
 
       {!canCreate && !loading && (
-        <div className="card card-pad" style={{ marginBottom: 18, borderColor: 'rgba(245,166,35,0.3)' }}>
+        <div className="card card-pad" style={{ marginBottom: 18, borderColor: 'rgba(59,59,255,0.4)' }}>
           <p style={{ fontSize: 13, color: 'var(--text-dim)' }}>
             Para abrir uma ordem você precisa de pelo menos um <strong>cliente</strong>, um{' '}
             <strong>veículo</strong> e um <strong>mecânico</strong> cadastrados.
@@ -129,7 +129,7 @@ export default function WorkOrdersPage() {
                 const v = vehicleById[o.vehicleId]
                 return (
                   <tr key={o.id} style={{ cursor: 'pointer' }} onClick={() => navigate(`/ordens/${o.id}`)}>
-                    <td className="cell-strong" style={{ color: 'var(--amber)' }}>#{o.number}</td>
+                    <td className="cell-strong" style={{ color: 'var(--brand-hi)' }}>#{o.number}</td>
                     <td>
                       <div className="cell-strong">{clientById[o.clientId]?.name || `Cliente #${o.clientId}`}</div>
                       <div style={{ fontSize: 12, color: 'var(--text-faint)' }}>
@@ -261,7 +261,7 @@ function WorkOrderForm({ nextNumber, refs, onClose, onCreated }) {
   return (
     <Modal
       title="Nova ordem de serviço"
-      icon={<ClipboardList size={18} color="var(--amber)" />}
+      icon={<ClipboardList size={18} color="var(--brand-hi)" />}
       onClose={onClose}
       wide
       footer={

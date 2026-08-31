@@ -16,7 +16,7 @@ import { STATUS, normalizeStatus } from '../utils/status.js'
 import { money, formatDate } from '../utils/format.js'
 
 const LOW_STOCK = 5
-const STATUS_COLORS = ['#4aa8ff', '#f5a623', '#3fd17f', '#9b7cff']
+const STATUS_COLORS = ['#4aa8ff', '#3B3BFF', '#3fd17f', '#9b7cff']
 
 export default function Dashboard() {
   const [state, setState] = useState({ loading: true, error: null, data: null })
@@ -138,7 +138,7 @@ export default function Dashboard() {
         />
         <Kpi
           icon={Timer}
-          accent="var(--amber)"
+          accent="var(--brand-hi)"
           value={d.counts.total}
           label="Ordens no total"
           foot="Histórico completo da oficina"
@@ -166,7 +166,7 @@ export default function Dashboard() {
       <div className="two-col">
         <div className="card">
           <div className="card-head">
-            <ClipboardList size={17} color="var(--amber)" />
+            <ClipboardList size={17} color="var(--brand-hi)" />
             <div style={{ flex: 1 }}>
               <h3>Ordens recentes</h3>
               <div className="sub">Últimas entradas no pátio</div>
@@ -199,7 +199,7 @@ export default function Dashboard() {
 
         <div className="card">
           <div className="card-head">
-            <Wrench size={17} color="var(--amber)" />
+            <Wrench size={17} color="var(--brand-hi)" />
             <div>
               <h3>Distribuição por status</h3>
               <div className="sub">Onde estão as ordens agora</div>

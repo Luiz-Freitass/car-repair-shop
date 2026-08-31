@@ -200,7 +200,7 @@ function PieceForm({ initial, onClose, onSaved }) {
   return (
     <Modal
       title={isEdit ? 'Editar peça' : 'Nova peça'}
-      icon={<Package size={18} color="var(--amber)" />}
+      icon={<Package size={18} color="var(--brand-hi)" />}
       onClose={onClose}
       footer={
         <>

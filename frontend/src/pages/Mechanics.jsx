@@ -161,7 +161,7 @@ function MechanicForm({ initial, onClose, onSaved }) {
   return (
     <Modal
       title={isEdit ? 'Editar mecânico' : 'Novo mecânico'}
-      icon={<Wrench size={18} color="var(--amber)" />}
+      icon={<Wrench size={18} color="var(--brand-hi)" />}
       onClose={onClose}
       footer={
         <>

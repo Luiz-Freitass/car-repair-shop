@@ -39,7 +39,7 @@ export default function Login() {
             <Wrench size={26} />
           </div>
           <div className="brand-text">
-            <b>OFICINA</b>
+            <b>MecaniX</b>
             <span>Gestão</span>
           </div>
         </div>
@@ -107,7 +107,7 @@ export default function Login() {
                 type="email"
                 required
                 autoComplete="email"
-                placeholder="voce@oficina.com"
+                placeholder="voce@mecanix.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
