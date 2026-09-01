@@ -1,0 +1,6 @@
+# Estatisticas de linguagem do GitHub (Linguist)
+# Mantem a barra do repositorio como C# puro: o front-end React e os
+# arquivos de projeto/solucao nao entram na contagem.
+frontend/** linguist-vendored
+*.csproj    linguist-vendored
+*.slnx      linguist-vendored
